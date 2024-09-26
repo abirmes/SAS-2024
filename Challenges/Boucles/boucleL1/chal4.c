@@ -4,11 +4,11 @@ int main(){
 	int m=0;
 	printf("donnez un entier\n");
 	scanf("%d" ,&n);
-	printf("les nombres pairs sont donc:\n");
+	printf("les nombres impairs sont donc:\n");
 	int j=0;
 	while(m<n){
 		
-		if(j%2==0) {printf("%d\t" , j);
+		if(j%2!=0) {printf("%d\t" , j);
 		m++;
 		}
 		j++;
@@ -16,4 +16,5 @@ int main(){
 
 	
 	return 0;
+	
 }
