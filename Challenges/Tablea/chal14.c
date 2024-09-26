@@ -16,5 +16,5 @@ int main(){
 	}
 	moy=somme/n;
 	printf("la moyenne du membre de ce tableau est %f" , moy);
-	
+	return 0;
 }

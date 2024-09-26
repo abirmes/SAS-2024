@@ -17,5 +17,5 @@ int main(){
 		for(i=0;i<n;i++){
 		printf("T[%d] = %d \t" , i+1 , T[i]);
 	}
-	
+	return 0;
 }
