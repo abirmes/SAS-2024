@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(){
-		int i,n;
+	int i,n;
 	printf("donnez la taille du tableau:\n");
 	scanf("%d" , &n);
 	int T[n];
@@ -9,12 +9,12 @@ int main(){
 		printf("donnez l'element %d du tableau \n" , i+1);
 		scanf("%d" ,&T[i]);
 	}
-	int max=T[0];
+	int somme=0;
+	float moy;
 	for(i=0;i<n;i++){
-		if(max<T[i]){
-			max=T[i];
-		}
+		somme=somme+T[i];
 	}
-	printf("le maximum est %d" ,max);
-	return 0;
+	moy=somme/n;
+	printf("la moyenne du membre de ce tableau est %f" , moy);
+	
 }

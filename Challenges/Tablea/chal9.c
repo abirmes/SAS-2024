@@ -9,22 +9,17 @@ int main(){
 		printf("donnez l'element %d du tableau \n" , i+1);
 		scanf("%d" ,&T[i]);
 	}
-	
-	printf("le tableau avant la modification :");
+	printf("le tableau avant la modification :\n");
 		for(i=0;i<n;i++){
 		printf("T[%d] = %d \t" , i+1 , T[i]);
 	}
-	int temp;
-	for(i=0;i<n-1;i++){
-		if(T[i]>T[i+1]){
-			temp=T[i];
-			T[i]=T[i+1];
-			T[i+1]=temp;
-		}
+	for(i=0;i<n/2;i++){
+		T[i]=T[n-1-i];
 	}
 	printf("le tableau apres la modification :");
 		for(i=0;i<n;i++){
 		printf("T[%d] = %d \t" , i+1 , T[i]);
 	}
 	return 0;
+	
 }

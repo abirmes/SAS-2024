@@ -6,10 +6,10 @@ int main(){
 	char motDePass[n];
 	printf("ecrivez votre mot de passe chiffre par chiffre\n");
 	for(i=0;i<n;i++){
-		scanf("%c" ,&motDePass[i]);
+		scanf("%c" ,motDePass[i]);
 	}
 	for(i=0;i<n;i++){
-		printf("%c" ,&motDePass[i]);
+		printf("%c" ,motDePass[i]);
 	}
 	
 	
