@@ -5,7 +5,9 @@ int main(){
 	printf("donnez un nombre entier:\n");
 	scanf("%d" , &n);
 	int i=1;
-	do{
+	m=1;
+	while(n!=0){
+		
 		n=n/2;
 		if(n%2!=0){
 			m=m*i+1;
@@ -13,10 +15,11 @@ int main(){
 		else {
 			m=m*i;
 		}
-		s++;
 		i*=10;
-	}while(n!=0);
-	printf(" avant l'inverse \t%d \n" ,m);
+		s++;
+		
+	}
+	printf(" avant l'inverse \t\t%d \n" ,m);
 	printf("%d\n" , s);
 	int var,j;
 	j=1;
@@ -27,6 +30,10 @@ int main(){
 		j*=10;
 		
 	}
+
+	
+	
+    	
 	
 	
 	
