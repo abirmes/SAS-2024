@@ -13,8 +13,11 @@ int main(){
 		for(i=0;i<n;i++){
 		printf("T[%d] = %d \t" , i+1 , T[i]);
 	}
+	int temp;
 	for(i=0;i<n/2;i++){
+		temp=T[i];
 		T[i]=T[n-1-i];
+		T[n-1-i]=temp;
 	}
 	printf("le tableau apres la modification :");
 		for(i=0;i<n;i++){

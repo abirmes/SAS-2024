@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(){
-	int i,n;
+	int i,j,n;
 	printf("donnez la taille du tableau:\n");
 	scanf("%d" , &n);
 	int T[n];
@@ -16,11 +16,13 @@ int main(){
 	}
 	printf("\n");
 	int temp;
-	for(i=0;i<n-1;i++){
-		if(T[i]>T[i+1]){
-			temp=T[i];
-			T[i]=T[i+1];
-			T[i+1]=temp;
+	for(j=0;j<n-1;j++){
+		for(i=0;i<n;i++){
+			if(T[i]>T[i+1]){
+			    temp=T[i];
+			    T[i]=T[i+1];
+			    T[i+1]=temp;
+		    }
 		}
 	}
 	printf("le tableau apres la modification :");
