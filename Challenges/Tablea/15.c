@@ -12,8 +12,8 @@ int main(){
 		printf ("donnez la valeur de la case %d du premier tableau :\n" , i+1);
 		scanf("%d" , &tab1[i]);
 	}
-	for(i=0;i<n;i++){
-		printf ("donnez la valeur de la case %d du de tableau :\n" , i+1);
+	for(i=0;i<m;i++){
+		printf ("donnez la valeur de la case %d du deuxieme tableau :\n" , i+1);
 		scanf("%d" , &tab2[i]);
 	}
 	int fus[n+m];
@@ -21,7 +21,7 @@ int main(){
 		fus[i]=tab1[i];
 	}
 	for(i=n;i<n+m;i++){
-		fus[i]=tab2[i];
+		fus[i]=tab2[i-n];
 	}
 	printf("voila le tableau fusionnee\n\n");
 	for(i=0;i<n+m;i++){
