@@ -14,6 +14,7 @@ int main(){
 		for(i=0;i<n;i++){
 		printf("T[%d] = %d \t" , i+1 , T[i]);
 	}
+	printf("\n");
 	int temp;
 	for(i=0;i<n-1;i++){
 		if(T[i]>T[i+1]){
