@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdio.h>
 int minimum(int n , int m){
 	if(m<n){
 		return m;
