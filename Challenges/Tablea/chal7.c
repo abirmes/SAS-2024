@@ -17,7 +17,7 @@ int main(){
 	printf("\n");
 	int temp;
 	for(j=0;j<n-1;j++){
-		for(i=0;i<n;i++){
+		for(i=0;i<n-1;i++){
 			if(T[i]>T[i+1]){
 			    temp=T[i];
 			    T[i]=T[i+1];
