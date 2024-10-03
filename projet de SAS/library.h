@@ -208,13 +208,128 @@ void afficherNombreTotaleParStatu(Reservation* listeRes){
 	
 }
 //TRI
-/*void triListeReservationParNom(Reservation* listeRes){
-	Reservation* courant=listeRes;
-	Reservation* temp=NULL;
-	while(courant->suivant!=NULL){
-		
-	}
-}*/
+int calculerTempsDuDate(Reservation* listeRes){
+	int somme =0;
+	somme=atoi(listeRes->dateReservation.annee)*12*30+atoi(listeRes->dateReservation.mois)*30+atoi(listeRes->dateReservation.jour);
+	return somme;
+}
+void triListeReservationParDate(Reservation* listeRes){
+	if(listeRes==NULL) return;
+	int swapped;
+	Reservation* courant;
+	Reservation* dernier=NULL;
+	Reservation temp;
+	do{
+		swapped=0;
+		courant=listeRes;
+		while(courant->suivant!=dernier){ 
+		if(calculerTempsDuDate(courant)>calculerTempsDuDate(courant->suivant)){
+			temp=*courant;
+			strcpy(courant->nom,courant->suivant->nom);
+			strcpy(courant->prenom,courant->suivant->prenom);
+			strcpy(courant->status,courant->suivant->status);
+			strcpy(courant->dateReservation.jour,courant->suivant->dateReservation.jour);
+			strcpy(courant->dateReservation.mois,courant->suivant->dateReservation.mois);
+			strcpy(courant->dateReservation.annee,courant->suivant->dateReservation.annee);
+			strcpy(courant->numDeTelephone,courant->suivant->numDeTelephone);
+			strcpy(courant->ref,courant->suivant->ref);
+			courant->age=courant->suivant->age;
+			
+			strcpy(courant->suivant->nom,temp.nom);
+			strcpy(courant->suivant->prenom,temp.prenom);
+			strcpy(courant->suivant->status,temp.status);
+			strcpy(courant->suivant->dateReservation.jour,temp.dateReservation.jour);
+			strcpy(courant->suivant->dateReservation.mois,temp.dateReservation.mois);
+			strcpy(courant->suivant->dateReservation.annee,temp.dateReservation.annee);
+			strcpy(courant->suivant->numDeTelephone,temp.numDeTelephone);
+			strcpy(courant->suivant->ref,temp.ref);
+			courant->suivant->age=temp.age;
+			swapped=1;
+			
+		}
+		courant=courant->suivant;
+	}	
+	dernier=courant;	
+	}while(swapped);
+}
+void triListeReservationParStatus(Reservation* listeRes){
+	if(listeRes==NULL) return;
+	int swapped;
+	Reservation* courant;
+	Reservation* dernier=NULL;
+	Reservation temp;
+	do{
+		swapped=0;
+		courant=listeRes;
+		while(courant->suivant!=dernier){ 
+		if(strcmp(courant->status,courant->suivant->status)>0){
+			temp=*courant;
+			strcpy(courant->nom,courant->suivant->nom);
+			strcpy(courant->prenom,courant->suivant->prenom);
+			strcpy(courant->status,courant->suivant->status);
+			strcpy(courant->dateReservation.jour,courant->suivant->dateReservation.jour);
+			strcpy(courant->dateReservation.mois,courant->suivant->dateReservation.mois);
+			strcpy(courant->dateReservation.annee,courant->suivant->dateReservation.annee);
+			strcpy(courant->numDeTelephone,courant->suivant->numDeTelephone);
+			strcpy(courant->ref,courant->suivant->ref);
+			courant->age=courant->suivant->age;
+			
+			strcpy(courant->suivant->nom,temp.nom);
+			strcpy(courant->suivant->prenom,temp.prenom);
+			strcpy(courant->suivant->status,temp.status);
+			strcpy(courant->suivant->dateReservation.jour,temp.dateReservation.jour);
+			strcpy(courant->suivant->dateReservation.mois,temp.dateReservation.mois);
+			strcpy(courant->suivant->dateReservation.annee,temp.dateReservation.annee);
+			strcpy(courant->suivant->numDeTelephone,temp.numDeTelephone);
+			strcpy(courant->suivant->ref,temp.ref);
+			courant->suivant->age=temp.age;
+			swapped=1;
+			
+		}
+		courant=courant->suivant;
+	}	
+	dernier=courant;	
+	}while(swapped);
+}
+void triListeReservationParNom(Reservation* listeRes){
+	if(listeRes==NULL) return;
+	int swapped;
+	Reservation* courant;
+	Reservation* dernier=NULL;
+	Reservation temp;
+	do{
+		swapped=0;
+		courant=listeRes;
+		while(courant->suivant!=dernier){ 
+		if(strcmp(courant->nom,courant->suivant->nom)>0){
+			temp=*courant;
+			strcpy(courant->nom,courant->suivant->nom);
+			strcpy(courant->prenom,courant->suivant->prenom);
+			strcpy(courant->status,courant->suivant->status);
+			strcpy(courant->dateReservation.jour,courant->suivant->dateReservation.jour);
+			strcpy(courant->dateReservation.mois,courant->suivant->dateReservation.mois);
+			strcpy(courant->dateReservation.annee,courant->suivant->dateReservation.annee);
+			strcpy(courant->numDeTelephone,courant->suivant->numDeTelephone);
+			strcpy(courant->ref,courant->suivant->ref);
+			courant->age=courant->suivant->age;
+			
+			strcpy(courant->suivant->nom,temp.nom);
+			strcpy(courant->suivant->prenom,temp.prenom);
+			strcpy(courant->suivant->status,temp.status);
+			strcpy(courant->suivant->dateReservation.jour,temp.dateReservation.jour);
+			strcpy(courant->suivant->dateReservation.mois,temp.dateReservation.mois);
+			strcpy(courant->suivant->dateReservation.annee,temp.dateReservation.annee);
+			strcpy(courant->suivant->numDeTelephone,temp.numDeTelephone);
+			strcpy(courant->suivant->ref,temp.ref);
+			courant->suivant->age=temp.age;
+			swapped=1;
+			
+		}
+		courant=courant->suivant;
+	}	
+	dernier=courant;	
+	}while(swapped);
+}
 void backToHome()
 {
     while (getchar() != '\n')

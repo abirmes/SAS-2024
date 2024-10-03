@@ -138,11 +138,23 @@ int main(){
 				printf(" 2 - par date .\n");
 				printf(" 3 - par status .\n");
 				scanf("%d" , &trier);
-				/*witch(trier){
+				switch(trier){
 					case 1 :
+						triListeReservationParNom(listeRes);
+						afficherListeReservation(listeRes);
+						break;
+					case 2 :
+						triListeReservationParDate(listeRes);
+						afficherListeReservation(listeRes);
+						break;
+					case 3 :
+						triListeReservationParStatus(listeRes);
+						afficherListeReservation(listeRes);
+						break;
+					
 				}
 				backToHome();
-				break;*/
+				break;
 			case 7 :
 				system("cls");
 				printf("la moyenne d'age du patients reserve : %.2f" ,calculerMoyAgeReserve(listeRes) );
